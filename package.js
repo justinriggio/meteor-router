@@ -25,18 +25,3 @@ Package.on_use(function (api, where) {
     api.use('webapp', 'server');
   }
 });
-
-
-Package.on_test(function (api) {
-  api.use('router', ['client', 'server']);
-  api.use('test-helpers', ['client', 'server']);
-  api.use('tinytest', ['client', 'server']);
-  
-  api.use('session', 'client');
-  api.add_files('tests/router_client_tests.js', 'client');
-  
-  api.use('http', 'server');
-  api.add_files('tests/router_server_tests.js', 'server');
-  
-  api.add_files('tests/router_common_tests.js', ['client', 'server']);
-});
